@@ -1,0 +1,31 @@
+// write your code here
+
+function Distance(Pixel, x, y){
+    var dx = Pixel.getX() - x;
+    var dy = Pixel.getY() - y;
+    return Math.sqrt(dx * dx + dy * dy);
+    
+}
+
+
+
+var Output = new SimpleImage(320, 320);
+
+ for (var Pixel of Output.values()){
+     if (Distance(Pixel, 90, 90) <40 ){
+         Pixel.setRed(255-4*Distance(Pixel, 90, 90));
+     }
+     
+    else if (Distance(Pixel, 240, 240) <75 ){
+         Pixel.setGreen(255-4*Distance(Pixel, 240, 240));
+     }
+     
+    else if (Math.random() > 0.999){
+         Pixel.setRed(255);
+         Pixel.setGreen(255);
+     }
+ }
+
+
+
+print(Output);

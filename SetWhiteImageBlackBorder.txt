@@ -1,0 +1,15 @@
+// write your code here
+var Image = new SimpleImage(300,200);
+ for (var pixel of Image.values()){
+     pixel.setRed(255);
+     pixel.setGreen(255);
+     pixel.setBlue(255);
+     
+     if (pixel.getX() > 289 || pixel.getX() < 10 || pixel.getY() > 189 || pixel.getY() < 10){
+      pixel.setRed(0);
+      pixel.setGreen(0);
+      pixel.setBlue(0)   
+     }
+     
+     }
+ print(Image);

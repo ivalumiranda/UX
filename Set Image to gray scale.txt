@@ -1,0 +1,10 @@
+// write your code here
+var Image = new SimpleImage("usain.jpg");
+ 
+for (var pixel of Image.values()){
+    var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue())/3
+  pixel.setRed(avg);
+   pixel.setGreen(avg);
+    pixel.setBlue(avg);
+ }
+ print(Image);

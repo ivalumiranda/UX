@@ -1,0 +1,39 @@
+// write your code here
+function Dist(Pixel, x, y){
+    var dx = Pixel.getX() - x;
+    var dy = Pixel.getY() - y;
+    return Math.sqrt(dx * dx + dy * dy);
+}
+var Output = new SimpleImage(320, 320);
+   for (var Pixel of Output.values()){
+       if (Dist(Pixel, 80, 80) < 50){
+           Pixel.setBlue(255-4*Dist(Pixel,80, 80));
+        }
+        
+        else if (Dist(Pixel, 230, 50) < 20){
+            Pixel.setRed(150-5*Dist(Pixel, 230, 50));
+            Pixel.setBlue(200-5*Dist(Pixel, 230, 50));
+        } 
+        
+        else if (Dist(Pixel, 85, 250) < 40){
+            Pixel.setGreen(100-3*Dist(Pixel, 85, 250));
+            Pixel.setBlue(150-3*Dist(Pixel, 85, 250));
+        }
+        
+        else if (Dist(Pixel, 280, 280) < 100){
+            Pixel.setRed(255-2*Dist(Pixel, 280, 280));
+            Pixel.setGreen(255-2*Dist(Pixel, 280, 280));
+        }
+        
+        else if (Dist(Pixel, 145, 110) < 10){
+            Pixel.setRed(155-4*Dist(Pixel, 145, 110));
+            Pixel.setGreen(155-4*Dist(Pixel, 145, 110));
+            Pixel.setBlue(155-4*Dist(Pixel, 145, 110));
+        }
+        else if (Math.random() > 0.995){
+            Pixel.setRed(255);
+            Pixel.setGreen(255);
+        }
+   }
+
+print(Output);

@@ -1,0 +1,6 @@
+// write your code here
+var Mia = new SimpleImage("smalllion.jpg");
+for (var pixel of Mia.values()){
+  pixel.setRed(0);
+ }
+ print(Mia);

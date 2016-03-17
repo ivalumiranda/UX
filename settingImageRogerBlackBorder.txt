@@ -1,0 +1,12 @@
+// write your code here
+var Image = new SimpleImage("rodger.png");
+ for (var pixel of Image.values()){
+     
+     if (pixel.getX() > 305 || pixel.getX() < 10 || pixel.getY() > 415 || pixel.getY() < 10){
+      pixel.setRed(0);
+      pixel.setGreen(0);
+      pixel.setBlue(0)   
+     }
+     
+     }
+ print(Image);
